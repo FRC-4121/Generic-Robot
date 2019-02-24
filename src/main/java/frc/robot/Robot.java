@@ -277,6 +277,9 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
+    int POVAxis = Robot.oi.rightJoy.getPOV();
+    System.out.println(POVAxis);
+
   }
 
   
