@@ -15,15 +15,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.AutoDefaultStraight;
-import frc.robot.commands.AutoRobotLeftCargoFront;
-import frc.robot.commands.AutoRobotLeftCargoSide;
-import frc.robot.commands.AutoRobotRightCargoFront;
-import frc.robot.commands.AutoRobotRightCargoSide;
-import frc.robot.subsystems.ArmLiftSubsystem;
+import frc.robot.commands.AutoDriveCommandGroup;
 import frc.robot.subsystems.GenericDriveTrain;
-import frc.robot.subsystems.HabClimberSubsystem;
-import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.MecanumDriveTrain;
 import frc.robot.subsystems.WestCoastDriveTrain;
 
@@ -42,6 +35,7 @@ public class Robot extends TimedRobot {
  	//Network tables and entries
   public static NetworkTableInstance dataTableInstance;
   public static NetworkTable navxTable;
+  public static NetworkTable visionTable;
   
   public static NetworkTableEntry driveAngle;
   public static NetworkTableEntry gyroYaw;
@@ -50,6 +44,7 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry yDisplacement;
   public static NetworkTableEntry xDisplacement;
   public static NetworkTableEntry zeroGyro;
+  public static NetworkTableEntry robotStop;
   //public static NetworkTableEntry zeroDisplace;
 
   //Declare subsystems
@@ -84,18 +79,7 @@ public class Robot extends TimedRobot {
 
 		//Initialize NetworkTable entries
 		robotStop = visionTable.getEntry("RobotStop");
-    writeVideo = visionTable.getEntry("WriteVideo");
-    ballOffset = visionTable.getEntry("BallOffset");
-    ballDistance = visionTable.getEntry("BallDistance");
-    ballAngle = visionTable.getEntry("BallAngle");
-    ballScreenPercent = visionTable.getEntry("BallScreenPercent");
-    foundBall = visionTable.getEntry("FoundBall");
-    tapeOffset = visionTable.getEntry("TapeOffset");
-    foundTape = visionTable.getEntry("FoundTape");
-    visionTargetDistance = visionTable.getEntry("VisionTargetDistance");
-    visionTargetAngle = visionTable.getEntry("VisionTargetAngle");
-    visionTargetOffset = visionTable.getEntry("VisionTargetOffset");
-    foundVisionTarget = visionTable.getEntry("FoundVisionTarget");
+    
     
     driveAngle = navxTable.getEntry("GyroAngle");
     gyroYaw = navxTable.getEntry("GyroYaw");
@@ -250,7 +234,7 @@ public class Robot extends TimedRobot {
     //   }
     // }
 
-    autonomousCommad = new AutoDriveCommandGroup();
+    autonomousCommand = new AutoDriveCommandGroup();
 
     // schedule the autonomous command
     if (autonomousCommand != null) {

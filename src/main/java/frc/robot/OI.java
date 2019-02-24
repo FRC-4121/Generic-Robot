@@ -7,17 +7,10 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ChangeTeleopSpeed;
-import frc.robot.commands.ShootOutBall;
-import frc.robot.commands.TakeInBall;
-import frc.robot.commands.TestArmSpeedCommand;
-import frc.robot.commands.TestClimbDown;
-import frc.robot.commands.TestClimbDrive;
-import frc.robot.commands.TestClimbUp;
 
 
 /**
