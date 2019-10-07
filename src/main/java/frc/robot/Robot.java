@@ -102,7 +102,7 @@ public class Robot extends TimedRobot {
     * 2019 default: Mecanum
     */
 
-		driveType = 2;
+		driveType = 1;
 	  
     //Initialize the proper drive train based on drive type
     switch(driveType) {

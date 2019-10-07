@@ -28,8 +28,8 @@ public class OI {
 		//Joystick Configuration
 
 		//Create new joystick objects
-		//leftJoy = new Joystick(0); //Only needed for WCD
-		rightJoy = new Joystick(0);
+		leftJoy = new Joystick(0); //Only needed for WCD
+		rightJoy = new Joystick(1);
 
 		/* Joystick Button Layout
 		 * 1: Trigger

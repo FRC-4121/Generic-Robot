@@ -21,13 +21,13 @@ public class WestCoastDriveTrain extends GenericDriveTrain {
   // Initializing all WPI_TalonSRXs using CAN
   WPI_TalonSRX leftMotorMaster = new WPI_TalonSRX(RobotMap.LEFT_MOTOR_MASTER);
   WPI_TalonSRX leftMotorSlave1 = new WPI_TalonSRX(RobotMap.LEFT_MOTOR_SLAVE_1);
-  WPI_TalonSRX leftMotorSlave2 = new WPI_TalonSRX(RobotMap.LEFT_MOTOR_SLAVE_2);
-  SpeedControllerGroup leftMotorGroup = new SpeedControllerGroup(leftMotorMaster, leftMotorSlave1, leftMotorSlave2);
+  //WPI_TalonSRX leftMotorSlave2 = new WPI_TalonSRX(RobotMap.LEFT_MOTOR_SLAVE_2);
+  SpeedControllerGroup leftMotorGroup = new SpeedControllerGroup(leftMotorMaster, leftMotorSlave1);//, leftMotorSlave2);
 
   WPI_TalonSRX rightMotorMaster = new WPI_TalonSRX(RobotMap.RIGHT_MOTOR_MASTER);
   WPI_TalonSRX rightMotorSlave1 = new WPI_TalonSRX(RobotMap.RIGHT_MOTOR_SLAVE_1);
-  WPI_TalonSRX rightMotorSlave2 = new WPI_TalonSRX(RobotMap.RIGHT_MOTOR_SLAVE_2);
-  SpeedControllerGroup rightMotorGroup = new SpeedControllerGroup(rightMotorMaster, rightMotorSlave1, rightMotorSlave2);
+  //WPI_TalonSRX rightMotorSlave2 = new WPI_TalonSRX(RobotMap.RIGHT_MOTOR_SLAVE_2);
+  SpeedControllerGroup rightMotorGroup = new SpeedControllerGroup(rightMotorMaster, rightMotorSlave1);//, rightMotorSlave2);
 
 
   // Initialize robot drive train
